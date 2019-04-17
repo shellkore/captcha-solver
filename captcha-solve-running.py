@@ -5,23 +5,17 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import pytesseract
+import os
 
+imageName = input('Enter Image name(with extension): ')
 
-img1  = cv2.imread('captchas/captcha004.png',0)
-img2 = cv2.imread('captchas/captcha015.png',0)
+imagePath = os.getcwd()+'/captchas/'+imageName
 
+img  = cv2.imread(imagePath,0)  
 
-def showImage(img):
-    cv2.imshow('something',img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()   
+croppedImg = img[11:67,42:178]
 
-croppedImg1 = img1[11:67,42:178]
-croppedImg2 = img2[11:67,42:178]
-
-
-blurImg1 = cv2.medianBlur(croppedImg1,3)
-blurImg2 = cv2.medianBlur(croppedImg2,3)
+blurImg = cv2.medianBlur(croppedImg,3)
 
 def removeLineNoise(inputImg):
     img = inputImg
@@ -39,15 +33,9 @@ def removeLineNoise(inputImg):
                     img[i,j]=255
     return img
 
-outputImg1 = removeLineNoise(blurImg1)
-outputImg2 = removeLineNoise(blurImg2)
+outputImg = removeLineNoise(blurImg)
 
-blurOutput1  = cv2.medianBlur(outputImg1,3)
-blurOutput2 = cv2.medianBlur(outputImg2,3)
+blurOutput = cv2.medianBlur(outputImg,3)
 
-textOutput1 = pytesseract.image_to_string(blurOutput1)
-print(textOutput1)
-
-
-textOutput2 = pytesseract.image_to_string(blurOutput2)
-print(textOutput2)
+textOutput = pytesseract.image_to_string(blurOutput)
+print(textOutput)
