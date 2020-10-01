@@ -38,3 +38,5 @@ During Web-Scrapping you can use this code to solve Captcha automatically.
 >Help wanted to complete to-do tasks
 
 >Star the repo if you like it! :) 
+
+> She shells sea shells I dont know lol
