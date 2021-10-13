@@ -15,13 +15,13 @@ Type of CAPTCHA solved:
 
 ## RUN
 
-* Copy your captcha image in folder named `captchas`
+- Copy your captcha image in folder named `captchas`
 
-* Run file `captcha-solve-running.py`
+- Run file `captcha-solve-running.py`
 
   `python3 captcha-solve-running.py`
 
-* Enter your captcha image name(with extension)
+- Enter your captcha image name(with extension)
 
   view the output :)
 
@@ -36,7 +36,3 @@ During Web-Scrapping you can use this code to solve Captcha automatically.
 * Make code such that it can be easily integrate with web-scrapping code
 
 >Help wanted to complete to-do tasks
-
->Star the repo if you like it! :) 
-
-> She shells sea shells I dont know lol
